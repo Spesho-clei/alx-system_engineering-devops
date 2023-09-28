@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script generates a fictional story based on /etc/passwd.
+
+while IFS=: read -r username _ uid gid gecos home shell
+do
+    echo "The user $username is part of the $gid gang,"
+    echo "lives in $home and rides $shell."
+    echo "User ID's place is protected by the passcode $gecos,"
+    echo "more info about the user here: $uid $gecos"
+    echo ""
+done < /etc/passwd
